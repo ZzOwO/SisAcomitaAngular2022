@@ -1,0 +1,40 @@
+<div class="container wrapper">
+  <div class="row">
+      <!-- table -->
+      <div class="col-md-12">
+          <div class="inner">
+              <h1>Lista de Socios</h1>
+              <a class="btn btn-primary text-white add" routerLink="/add-partner">
+                <i class="fas fa-user-plus"></i> Agregar
+              </a>
+              <table class="table table-bordered">
+                  <thead>
+                      <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Nombres</th>
+                          <th scope="col">Apellidos</th>
+                          <th scope="col">DNI</th>
+                          <th scope="col">Telefono</th>
+                          <th scope="col">Email</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr *ngFor="let item of partnerList">
+                          <th scope="row">{{item.id}}</th>
+                          <td>{{item.name}}</td>
+                          <td>{{item.lastname}}</td>
+                          <td>{{item.dni}}</td>
+                          <td>{{item.phone}}</td>
+                          <td>{{item.email}}</td>
+
+                          <td>
+                              <button type="button" class="btn btn-success btn-sm move-right" (click)="onEdit(item)">Edit</button>
+                              <button type="button" class="btn btn-danger btn-sm" (click)="deletePartner(item.id)">Remove</button>
+                          </td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+      </div>
+  </div>
+</div>
