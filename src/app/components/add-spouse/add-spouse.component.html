@@ -1,42 +1,64 @@
-<div class="card mt-5">
-  <div class="card-body">
-      <h4 class="text-center">Registro de Escuela profesional</h4>
-      <form #spouseForm="ngForm" (ngSubmit)="submitForm(spouseForm)">
-          <input type="hidden" name="id" [(ngModel)]="spouseService.selectSpouse.id">
-          <div class="form-group mb-3">
-            <input type="text" class="form-control" name="fullname"
-            [(ngModel)]="spouseService.selectSpouse.fullname"
-              placeholder="nombres y apellidos">
+<div class="col-md-7 col-lg-8 mx-auto">
+  <h4 class="mb-3">Complete la información</h4>
+  <form #spouseForm="ngForm" (ngSubmit)="submitForm(spouseForm)">
+    <div class="row g-3 card-body">
+      <input type="hidden" name="id" [(ngModel)]="spouseService.selectSpouse.id">
+      <div class="col-sm-4">
+          <label class="form-label">Nombre Completo<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="fullname" [(ngModel)]="spouseService.selectSpouse.fullname"
+            placeholder="nombres" required>
+          <div class="invalid-feedback">
+            Campo Requerido
           </div>
-          <div class="form-group mb-3">
-            <input type="text" class="form-control" name="dni"
-            [(ngModel)]="spouseService.selectSpouse.dni"
-              placeholder="dni">
+        </div>
+        <div class="col-sm-4">
+          <label class="form-label">DNI<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="dni" [(ngModel)]="spouseService.selectSpouse.dni"
+            placeholder="dni" required>
+          <div class="invalid-feedback">
+            Campo Requerido
           </div>
-          <div class="form-group mb-3">
-            <input type="text" class="form-control" name="phone"
-            [(ngModel)]="spouseService.selectSpouse.phone"
-              placeholder="teléfono">
-          </div>
-          <div class="form-group mb-3">
-            <input type="text" class="form-control" name="partner_id"
-            [(ngModel)]="spouseService.selectSpouse.partner_id"
-              placeholder="conyugue">
-          </div>
+        </div>
 
-          <div class="form-group ">
-            <button class="btn btn-primary me-2" type="submit">
-                <i class="fas fa-plus-circle" ></i> Agregar
-            </button>
-            <button class="btn btn-secondary me-2" type="reset" (click)="resetForm(spouseForm)">
-                <i class="fas fa-sync-alt"></i> Resetear
-            </button>
-            <button class="btn btn-secondary" type="button" routerLink="/">
-              <i class="fas fa-hand-point-left"></i> Cancelar
-          </button>
+        <div class="col-sm-4">
+          <label class="form-label">Teléfono<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="phone" [(ngModel)]="spouseService.selectSpouse.phone"
+            placeholder="telefono" required>
+          <div class="invalid-feedback">
+            Campo Requerido
           </div>
-        </form>
-  </div>
+        </div>
+
+        <div class="col-sm-4">
+          <label class="form-label">Correo<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="email" [(ngModel)]="spouseService.selectSpouse.email"
+            placeholder="correo" required>
+          <div class="invalid-feedback">
+            Campo Requerido
+          </div>
+        </div>
+
+        <div class="col-sm-1">
+          <label class="form-label">#<span class="text-danger">*</span></label>
+          <input type="text" class="form-control" name="partner_id"
+            [(ngModel)]="spouseService.selectSpouse.partner_id" placeholder="">
+
+          <div class="invalid-feedback">
+            Campo Requerido
+          </div>
+        </div>
+    </div>
+    <hr class="my-4">
+    <div class="form-group text-center" >
+      <button class="btn btn-primary me-2" type="submit">
+        <i class="fas fa-plus-circle"></i> Agregar
+      </button>
+      <button class="btn btn-secondary me-2" type="reset" (click)="resetForm(spouseForm)">
+        <i class="fas fa-sync-alt"></i> Resetear
+      </button>
+      <button class="btn btn-secondary" type="button" routerLink="/list-spouses/">
+        <i class="fas fa-hand-point-left"></i> Cancelar
+      </button>
+    </div>
+  </form>
 </div>
-
-

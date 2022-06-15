@@ -12,7 +12,7 @@ import { SpouseService } from 'src/app/services/spouse.service';
 export class AddSpouseComponent implements OnInit {
 
   constructor(public spouseService:SpouseService, private router:Router) { }
-
+  spouseList:any=[];
   ngOnInit(): void {
   }
 
